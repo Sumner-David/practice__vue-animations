@@ -46,7 +46,7 @@ export default {
   }
 
   .toast-enter-active {
-    transition: all 0.4s ease-in
+    animation: wobble 1s ease
   }
 
   /* Leave Classes */
@@ -62,6 +62,34 @@ export default {
 
   .toast-leave-active {
     transition: all 0.4s ease-in
+  }
+
+
+
+  @keyframes wobble {
+    0% {
+      opacity: 0;
+      transform: translateY(-60px);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    60% {
+      transform: translateX(8px)
+    }
+    70% {
+      transform: translateX(-8px)
+    }
+    80% {
+      transform: translateX(4px)
+    }
+    90% {
+      transform: translateX(-4px)
+    }
+    100% {
+      transform: translateX(0px)
+    }
   }
 
 </style>
