@@ -7,7 +7,11 @@
       placeholder="Add a new todo..."
     />
     <div v-if="todos.length">
-      <transition-group tag="ul" name="list">
+      <transition-group
+        tag="ul"
+        name="list"
+        appear
+      >
         <li v-for="todo in todos" :key="todo.id" @click="deleteTodo(todo.id)">
           {{ todo.text }}
         </li>
@@ -61,10 +65,13 @@ export default {
     box-sizing: border-box;
     margin-bottom: 20px;
   }
+
   .todos ul {
     position: relative;
     padding: 0;
   }
+
+
   .todos li {
     list-style-type: none;
     display: block;
@@ -106,7 +113,15 @@ export default {
     transition: all 0.5s ease
   }
   .list-leave-active {
-    transition: all 0.5s ease
+    transition: all 0.5s ease;
+
+    /* This allows the move-class to work on leave */
+    position: absolute
+  }
+
+  /* Move class. Lets you add items smoothly */
+  .list-move {
+    transition: all 0.3s ease
   }
 
 </style>
