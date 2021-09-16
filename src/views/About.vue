@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { ref } from '@vue/reactivity'
+
 import gsap from 'gsap'
 
 export default {
