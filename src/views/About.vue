@@ -35,7 +35,7 @@ export default {
 
       gsap.to(el, {
         y: 0,
-        duration: 3,
+        duration: 1,
         opacity:1,
         ease: 'bounce.out',
         onComplete: done
